@@ -1,7 +1,6 @@
 @use 'variables';
 
 :root {
-  @include variables.vars;
   @include variables.theme-light;
 
   @media (prefers-color-scheme: dark) {

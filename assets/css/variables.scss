@@ -4,22 +4,17 @@
  */
 
 $mobile-breakpoint: 426px;
+$tablet-breakpoint: 834px;
 
-@mixin desktopOnly {
+@mixin tabletDesktopOnly {
   @media only screen and (min-width: $mobile-breakpoint) {
     @content;
   }
 }
 
-@mixin vars {
-  --content-width: 100%;
-  --content-max-width: 962px;
-
-  @include desktopOnly {
-    --content-width: 80%;
-
-    --content-height: 70%;
-    --content-max-height: 467px;
+@mixin desktopOnly {
+  @media only screen and (min-width: $tablet-breakpoint) {
+    @content;
   }
 }
 

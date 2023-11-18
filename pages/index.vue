@@ -204,18 +204,33 @@ let hasValidPadding = computed(() => {
 </template>
 
 <style lang="scss">
+@use "@/assets/css/variables.scss" as var;
+
 #index-page {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  overflow: auto;
+
+  @include var.desktopOnly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .cbc {
-  max-height: 95%;
-  max-width: 90%;
+  margin: 2.5% 2rem;
+  height: 95%;
   font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+
+  @include var.desktopOnly {
+    margin: initial;
+    height: initial;
+    max-height: 95%;
+    max-width: 90%;
+  }
 }
 
 #crypt-block {

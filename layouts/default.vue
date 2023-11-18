@@ -8,6 +8,7 @@ const theme = useTheme()
       <NuxtLink to="/" id="link-home">
         <Logo id="padding-logo"/>
         <h1 id="page-title">Live Padding Oracle</h1>
+        <h1 id="page-title-mobile">LPO</h1>
       </NuxtLink>
       <div class="spacer" />
       <div class="theme-toggle">
@@ -33,6 +34,8 @@ const theme = useTheme()
 </template>
 
 <style lang="scss">
+@use "@/assets/css/variables.scss" as var;
+
 #wrapper {
   height: 100vh;
   display: flex;
@@ -60,6 +63,21 @@ const theme = useTheme()
 
   #page-title {
     color: var(--primary);
+    display: none;
+  }
+
+  #page-title-mobile {
+    color: var(--primary);
+  }
+
+  @include var.tabletDesktopOnly {
+    #page-title {
+      display: initial;
+    }
+
+    #page-title-mobile {
+      display: none;
+    }
   }
 
   .spacer {
@@ -88,7 +106,6 @@ const theme = useTheme()
 
 #content {
   flex: auto;
-  overflow: auto;
 }
 
 #footer {
