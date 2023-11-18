@@ -1,0 +1,54 @@
+/*!
+ * Copyright (c) 2022 tooboredtocode
+ * All Rights Reserved
+ */
+
+$mobile-breakpoint: 426px;
+
+@mixin desktopOnly {
+  @media only screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin vars {
+  --content-width: 100%;
+  --content-max-width: 962px;
+
+  @include desktopOnly {
+    --content-width: 80%;
+
+    --content-height: 70%;
+    --content-max-height: 467px;
+  }
+}
+
+@mixin theme-light {
+  --text: #020b12;
+
+  --background: #e4ecf1;
+  --background-accent: #a4b3bb;
+
+  --primary: #33a4eb;
+  --secondary: #b4def8;
+
+  --accent: #1486cc;
+
+  --correct: #2ecc71;
+  --incorrect: #e74c3c;
+}
+
+@mixin theme-dark {
+  --text: #edf6fd;
+
+  --background: #0e161b;
+  --background-accent: #1c2a32;
+
+  --primary: #1486cc;
+  --secondary: #07314b;
+
+  --accent: #33a4eb;
+
+  --correct: #0fa850;
+  --incorrect: #c4200f;
+}

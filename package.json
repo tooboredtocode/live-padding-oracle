@@ -1,0 +1,28 @@
+{
+  "name": "live-padding-oracle",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4",
+    "@fortawesome/free-regular-svg-icons": "^6.4",
+    "@fortawesome/free-solid-svg-icons": "^6.4",
+    "@fortawesome/vue-fontawesome": "^3.0",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.8.1",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
+  },
+  "version": "1.0.0",
+  "author": "tooboredtocode <bored-coder@tooboredtocode.dev>",
+  "license": "MIT"
+}
