@@ -24,6 +24,5 @@
   },
   "version": "1.0.0",
   "author": "tooboredtocode <bored-coder@tooboredtocode.dev>",
-  "license": "MIT",
   "packageManager": "yarn@4.0.2"
 }
