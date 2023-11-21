@@ -40,6 +40,6 @@ class Theme {
     }
 }
 
-export default function useTheme() {
+export default function useTheme(): Theme {
     return new Theme();
 }

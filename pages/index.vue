@@ -10,21 +10,21 @@ let hideClearMsg = ref(true);
 
 let zeroingIV: Ref<Array<number>> = ref(new Array(MAX_BLOCK_SIZE).fill(0));
 function zeroingIVHandler(e: KeyboardEvent, index: number) {
-  if (e.key === 'ArrowUp') {
-    zeroingIV.value[index] = (zeroingIV.value[index] + 1 + 256) % 256;
-  } else if (e.key === 'ArrowDown') {
-    zeroingIV.value[index] = (zeroingIV.value[index] - 1 + 256) % 256;
-  } else if (e.key in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) {
-    let value = parseInt(e.key);
-    zeroingIV.value[index] = ((zeroingIV.value[index] << 4) + value) % 256;
-  } else if (e.key.match(/^[a-f]$/)) {
-    let value = e.key.charCodeAt(0) - 'a'.charCodeAt(0) + 10;
-    zeroingIV.value[index] = ((zeroingIV.value[index] << 4) + value) % 256;
-  } else if (e.key.match(/^[A-F]$/)) {
-    let value = e.key.charCodeAt(0) - 'A'.charCodeAt(0) + 10;
-    zeroingIV.value[index] = ((zeroingIV.value[index] << 4) + value) % 256;
-  } else if (e.key === 'Backspace') {
-    zeroingIV.value[index] >>= 4;
+  let action = useKeyboardListener(e);
+  switch (action.ty) {
+    case "Modify":
+      zeroingIV.value[index] += action.value;
+      zeroingIV.value[index] += 256;
+      zeroingIV.value[index] %= 256;
+      break;
+    case "Replace":
+      zeroingIV.value[index] <<= 4;
+      zeroingIV.value[index] += action.value;
+      zeroingIV.value[index] %= 256;
+      break;
+    case "Delete":
+      zeroingIV.value[index] >>= 4;
+      break;
   }
 }
 
@@ -37,20 +37,21 @@ let paddingVec = computed(() => {
   return vec;
 });
 function paddingHandler(e: KeyboardEvent) {
-  if (e.key === 'ArrowUp') {
-    padding.value = Math.min(padding.value + 1, blockSize)
-  } else if (e.key === 'ArrowDown') {
-    padding.value = Math.max(padding.value - 1, 0)
+  let action = useKeyboardListener(e);
+  switch (action.ty) {
+    case "Modify":
+      padding.value = Math.min(padding.value + action.value, blockSize);
+      break;
+    case "Replace":
+      padding.value = action.value > blockSize ? blockSize : action.value;
+      break;
+    case "Delete":
+      padding.value = 0;
+      break;
   }
 }
 
-let evilIV = computed(() => {
-  let vec = new Array(blockSize).fill(0);
-  for (let i = 0; i < blockSize; i++) {
-    vec[i] = zeroingIV.value[i] ^ paddingVec.value[i];
-  }
-  return vec;
-});
+let evilIV = createComputedArray(blockSize, (i) => zeroingIV.value[i] ^ paddingVec.value[i]);
 
 let clearMsg = ref(new Array(MAX_BLOCK_SIZE).fill(0).map(() => Math.floor(Math.random() * 256)));
 let iv = ref(new Array(MAX_BLOCK_SIZE).fill(0).map(() => Math.floor(Math.random() * 256)));
@@ -58,32 +59,12 @@ let cipher_msg = ref(new Array(MAX_BLOCK_SIZE).fill(0).map(() => Math.floor(Math
 
 let useEvilIV = ref(true);
 
-let receivedIV = computed(() => {
-  let vec = new Array(blockSize).fill(0);
-  for (let i = 0; i < blockSize; i++) {
-    vec[i] = iv.value[i];
-
-    if (useEvilIV.value) {
-      vec[i] ^= evilIV.value[i];
-    }
-  }
-  return vec;
-});
-
-let receivedMsg = computed(() => {
-  let vec = new Array(blockSize).fill(0);
-  for (let i = 0; i < blockSize; i++) {
-    vec[i] = clearMsg.value[i] ^ iv.value[i] ^ receivedIV.value[i];
-  }
-  return vec;
-});
+let receivedIV = createComputedArray(blockSize, (i) => iv.value[i] ^ (useEvilIV.value ? evilIV.value[i] : 0));
+let receivedMsg = createComputedArray(blockSize, (i) => clearMsg.value[i] ^ iv.value[i] ^ receivedIV.value[i]);
 
 let hasValidPadding = computed(() => {
   let padding = receivedMsg.value[receivedMsg.value.length - 1];
-  if (padding > blockSize) {
-    return false;
-  }
-  if (padding === 0) {
+  if (padding > blockSize || padding === 0) {
     return false;
   }
 
