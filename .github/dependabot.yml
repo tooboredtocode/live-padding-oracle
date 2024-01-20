@@ -4,8 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-
-group: // Group all dependency updates into one PR
-  all:
-    patterns:
-    - "*"
+    # Group all dependency updates into one PR
+    groups:
+      all:
+        patterns:
+          - "*"
