@@ -804,12 +804,12 @@ __metadata:
   linkType: hard
 
 "@fortawesome/vue-fontawesome@npm:^3.0":
-  version: 3.0.5
-  resolution: "@fortawesome/vue-fontawesome@npm:3.0.5"
+  version: 3.0.6
+  resolution: "@fortawesome/vue-fontawesome@npm:3.0.6"
   peerDependencies:
     "@fortawesome/fontawesome-svg-core": ~1 || ~6
     vue: ">= 3.0.0 < 4"
-  checksum: 2febcf5d91ec893424c3780bc0701a63d08e870e6e66b13dbcf17d49a41c78599e65c79ececbde511b882743e0e38ffd55169220e3e95188c8659015a4b95bf8
+  checksum: 58f49ecde955fd0435d4fbbf7ae3c32038f0a1dac8e21d71ec6c1c7cf8b3e12b261c25ed2906cd97cda39fa969fec87ea1cf71d18d30d879ad369491443cafad
   languageName: node
   linkType: hard
 
