@@ -14,13 +14,13 @@
     "@fortawesome/free-regular-svg-icons": "^6.5",
     "@fortawesome/free-solid-svg-icons": "^6.5",
     "@fortawesome/vue-fontawesome": "^3.0",
-    "sass": "^1.71.0"
+    "sass": "^1.71.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.10.2",
-    "vue": "^3.4.19",
-    "vue-router": "^4.2.5"
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.20",
+    "vue-router": "^4.3.0"
   },
   "version": "1.0.0",
   "author": "tooboredtocode <bored-coder@tooboredtocode.dev>",
