@@ -6,6 +6,6 @@ updates:
       interval: "weekly"
     # Group all dependency updates into one PR
     groups:
-      all:
+      npm:
         patterns:
           - "*"
