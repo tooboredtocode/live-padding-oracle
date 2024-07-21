@@ -106,6 +106,7 @@ const theme = useTheme()
 
 #content {
   flex: auto;
+  overflow: hidden;
 }
 
 #footer {
