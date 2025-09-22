@@ -1375,21 +1375,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-kit@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@nuxt/devtools-kit@npm:2.6.3"
+"@nuxt/devtools-kit@npm:2.6.5":
+  version: 2.6.5
+  resolution: "@nuxt/devtools-kit@npm:2.6.5"
   dependencies:
-    "@nuxt/kit": "npm:^3.18.1"
+    "@nuxt/kit": "npm:^3.19.2"
     execa: "npm:^8.0.1"
   peerDependencies:
     vite: ">=6.0"
-  checksum: a5baaeb6a6e87f3b7fd13f7d4e6731ad2b1c70fdc17fe8b18b418565f8b9b772a6617f716350865f03314aed59d2c26d34cdbc8f05a345475225279fbf37365a
+  checksum: d40f6b9783e99bfd820f72b966928415d4401e38fa19694d3093570a728bc0cc18499055a2473810ba6d123c2179f2a3fcf39e41c6a80f300d4da294f11e5829
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-wizard@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@nuxt/devtools-wizard@npm:2.6.3"
+"@nuxt/devtools-wizard@npm:2.6.5":
+  version: 2.6.5
+  resolution: "@nuxt/devtools-wizard@npm:2.6.5"
   dependencies:
     consola: "npm:^3.4.2"
     diff: "npm:^8.0.2"
@@ -1401,17 +1401,17 @@ __metadata:
     semver: "npm:^7.7.2"
   bin:
     devtools-wizard: cli.mjs
-  checksum: 1195d81bf38cbd3bf9fa2d5d48e8587dfd978a4bfb86fc5e5ac41930a0652444fea871db471af74b0ef74a0e352cf5089c6e23ea35d757cb6e920a61920b9402
+  checksum: 79ba4ede07175e0b46da49991b10b9ec82970971c0e48833178693cb4f94ea0b24d8b0931a845b151fac9fbd00d121fb843328de1ff72d286639582ddbb544c5
   languageName: node
   linkType: hard
 
 "@nuxt/devtools@npm:^2.6.3, @nuxt/devtools@npm:latest":
-  version: 2.6.3
-  resolution: "@nuxt/devtools@npm:2.6.3"
+  version: 2.6.5
+  resolution: "@nuxt/devtools@npm:2.6.5"
   dependencies:
-    "@nuxt/devtools-kit": "npm:2.6.3"
-    "@nuxt/devtools-wizard": "npm:2.6.3"
-    "@nuxt/kit": "npm:^3.18.1"
+    "@nuxt/devtools-kit": "npm:2.6.5"
+    "@nuxt/devtools-wizard": "npm:2.6.5"
+    "@nuxt/kit": "npm:^3.19.2"
     "@vue/devtools-core": "npm:^7.7.7"
     "@vue/devtools-kit": "npm:^7.7.7"
     birpc: "npm:^2.5.0"
@@ -1427,17 +1427,17 @@ __metadata:
     launch-editor: "npm:^2.11.1"
     local-pkg: "npm:^1.1.2"
     magicast: "npm:^0.3.5"
-    nypm: "npm:^0.6.1"
+    nypm: "npm:^0.6.2"
     ohash: "npm:^2.0.11"
     pathe: "npm:^2.0.3"
     perfect-debounce: "npm:^1.0.0"
     pkg-types: "npm:^2.3.0"
     semver: "npm:^7.7.2"
     simple-git: "npm:^3.28.0"
-    sirv: "npm:^3.0.1"
+    sirv: "npm:^3.0.2"
     structured-clone-es: "npm:^1.0.0"
-    tinyglobby: "npm:^0.2.14"
-    vite-plugin-inspect: "npm:^11.3.2"
+    tinyglobby: "npm:^0.2.15"
+    vite-plugin-inspect: "npm:^11.3.3"
     vite-plugin-vue-tracer: "npm:^1.0.0"
     which: "npm:^5.0.0"
     ws: "npm:^8.18.3"
@@ -1445,7 +1445,7 @@ __metadata:
     vite: ">=6.0"
   bin:
     devtools: cli.mjs
-  checksum: 24fcb8bd638a58a6b5b6b133aa1e4a459c7eb788eac7c68475de1b910ce4c409bea0db169fb6abd5bd64638dc02452f2464096a8dc1d27bf9359d7c32f7590dd
+  checksum: 5708c443b438cf98dc9cb14e1cdb534a18eec336c84c1e9d369cce03c32b9e4e1747a9c11d98a53fa27850c12c68ae6c1c5ba60929eb24b402cf131c1050baac
   languageName: node
   linkType: hard
 
@@ -1507,9 +1507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:^3.18.1":
-  version: 3.18.1
-  resolution: "@nuxt/kit@npm:3.18.1"
+"@nuxt/kit@npm:^3.19.2":
+  version: 3.19.2
+  resolution: "@nuxt/kit@npm:3.19.2"
   dependencies:
     c12: "npm:^3.2.0"
     consola: "npm:^3.4.2"
@@ -1521,19 +1521,20 @@ __metadata:
     jiti: "npm:^2.5.1"
     klona: "npm:^2.0.6"
     knitwork: "npm:^1.2.0"
-    mlly: "npm:^1.7.4"
+    mlly: "npm:^1.8.0"
     ohash: "npm:^2.0.11"
     pathe: "npm:^2.0.3"
-    pkg-types: "npm:^2.2.0"
+    pkg-types: "npm:^2.3.0"
+    rc9: "npm:^2.1.2"
     scule: "npm:^1.3.0"
     semver: "npm:^7.7.2"
     std-env: "npm:^3.9.0"
-    tinyglobby: "npm:^0.2.14"
+    tinyglobby: "npm:^0.2.15"
     ufo: "npm:^1.6.1"
     unctx: "npm:^2.4.1"
     unimport: "npm:^5.2.0"
     untyped: "npm:^2.0.0"
-  checksum: c4e1d942b98bc0130b62c72310a26d870846a9eb544e34275659794c66f2d93f173ed8d611a4132c3088c22e35737f9ebcd770fad335ab149d61b214986ed7d7
+  checksum: 0a5223c3ea836f9f3720e4ad5616c57d566633c41e6b5363078d341f52b78a4c94d1c425c413cf65759d06ec2b77b72359e16e86cba6161b3b19dca7de521084
   languageName: node
   linkType: hard
 
@@ -5565,7 +5566,7 @@ __metadata:
     "@fortawesome/vue-fontawesome": "npm:^3.1"
     "@nuxt/devtools": "npm:latest"
     nuxt: "npm:^4.1.2"
-    sass: "npm:^1.92.1"
+    sass: "npm:^1.93.0"
     vue: "npm:^3.5.21"
     vue-router: "npm:^4.5.1"
   languageName: unknown
@@ -6541,6 +6542,21 @@ __metadata:
   bin:
     nypm: dist/cli.mjs
   checksum: 61fc5ca665b998fa0229dd663799e8dbb6c757d01b00e90594731068e002f7d7e27b36de9dae807065cd44463ab0c0a6fc5a52560789377df007d1c56499f19f
+  languageName: node
+  linkType: hard
+
+"nypm@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "nypm@npm:0.6.2"
+  dependencies:
+    citty: "npm:^0.1.6"
+    consola: "npm:^3.4.2"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.0"
+    tinyexec: "npm:^1.0.1"
+  bin:
+    nypm: dist/cli.mjs
+  checksum: b1aca658e29ed616ad6e487f9c3fd76773485ad75c1f99efe130ccb304de60b639a3dda43c3ce6c060113a3eebaee7ccbea554f5fbd1f244474181dc9bf3f17c
   languageName: node
   linkType: hard
 
@@ -7836,9 +7852,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.92.1":
-  version: 1.92.1
-  resolution: "sass@npm:1.92.1"
+"sass@npm:^1.93.0":
+  version: 1.93.0
+  resolution: "sass@npm:1.93.0"
   dependencies:
     "@parcel/watcher": "npm:^2.4.1"
     chokidar: "npm:^4.0.0"
@@ -7849,7 +7865,7 @@ __metadata:
       optional: true
   bin:
     sass: sass.js
-  checksum: 4c43975580f6bd5511bb140ec8445d936663ffacc7d0513aae65b95e2a46a954268177406b2dd4ac32494e868520ac5ea929c3521f04bc10293fb16dc25b2935
+  checksum: 51dcb4e65a69f97b4c200ee154ca45f81b748a45f8ef0ec3236b774bb143590a9304038e9ab09f809f734d4edb3add96a0a690b2e8451ff66b9f57c469b2685e
   languageName: node
   linkType: hard
 
@@ -8019,6 +8035,17 @@ __metadata:
     mrmime: "npm:^2.0.0"
     totalist: "npm:^3.0.0"
   checksum: 7cf64b28daa69b15f77b38b0efdd02c007b72bb3ec5f107b208ebf59f01b174ef63a1db3aca16d2df925501831f4c209be6ece3302b98765919ef5088b45bf80
+  languageName: node
+  linkType: hard
+
+"sirv@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "sirv@npm:3.0.2"
+  dependencies:
+    "@polka/url": "npm:^1.0.0-next.24"
+    mrmime: "npm:^2.0.0"
+    totalist: "npm:^3.0.0"
+  checksum: 5930e4397afdb14fbae13751c3be983af4bda5c9aadec832607dc2af15a7162f7d518c71b30e83ae3644b9a24cea041543cc969e5fe2b80af6ce8ea3174b2d04
   languageName: node
   linkType: hard
 
@@ -9022,7 +9049,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-inspect@npm:^11.3.2":
+"vite-plugin-inspect@npm:^11.3.3":
   version: 11.3.3
   resolution: "vite-plugin-inspect@npm:11.3.3"
   dependencies:
