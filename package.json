@@ -14,12 +14,12 @@
     "@fortawesome/free-regular-svg-icons": "^7.0",
     "@fortawesome/free-solid-svg-icons": "^7.0",
     "@fortawesome/vue-fontawesome": "^3.1",
-    "sass": "^1.93.0"
+    "sass": "^1.93.2"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "nuxt": "^4.1.2",
-    "vue": "^3.5.21",
+    "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },
   "version": "1.0.0",
