@@ -5925,7 +5925,7 @@ __metadata:
     nuxt: "npm:^4.1.3"
     sass: "npm:^1.93.2"
     vue: "npm:^3.5.22"
-    vue-router: "npm:^4.5.1"
+    vue-router: "npm:^4.6.3"
   languageName: unknown
   linkType: soft
 
@@ -9742,6 +9742,17 @@ __metadata:
   peerDependencies:
     vue: ^3.2.0
   checksum: 89fbc11e46c19a4c4d62b807596a0210726dc09bd9e6a319ded1ac0951e6933e581c56acd1b846d3891673b9bad7348564d28ecd8424126d63578b3b5d291d96
+  languageName: node
+  linkType: hard
+
+"vue-router@npm:^4.6.3":
+  version: 4.6.3
+  resolution: "vue-router@npm:4.6.3"
+  dependencies:
+    "@vue/devtools-api": "npm:^6.6.4"
+  peerDependencies:
+    vue: ^3.5.0
+  checksum: 4528f4fded4b45b07d4e096116e9b5fd602af463e735f7e5133b1a258ce325ebc894dd7bc962a937556615fd42d06b0fb290dfae90e96f237862b7f74baa22a0
   languageName: node
   linkType: hard
 
