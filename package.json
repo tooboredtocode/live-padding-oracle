@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^4.3.0",
+    "nuxt": "^4.3.1",
     "vue": "^3.5.27",
-    "vue-router": "^5.0.1"
+    "vue-router": "^5.0.2"
   },
   "version": "1.0.0",
   "author": "tooboredtocode <bored-coder@tooboredtocode.dev>",
