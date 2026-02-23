@@ -20,7 +20,7 @@
     "@nuxt/devtools": "latest",
     "nuxt": "^4.3.1",
     "vue": "^3.5.28",
-    "vue-router": "^5.0.2"
+    "vue-router": "^5.0.3"
   },
   "version": "1.0.0",
   "author": "tooboredtocode <bored-coder@tooboredtocode.dev>",
