@@ -5,6 +5,6 @@ Block Ciphers using the CBC mode of operation.
 
 ---
 
-Copyright (c) 2023 tooboredtocode
+Copyright (c) 2023 - 2026 tooboredtocode
 
 All Rights Reserved

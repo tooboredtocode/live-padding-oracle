@@ -8,11 +8,11 @@
   }
 }
 
-[theme='light'] {
+[data-theme='light'] {
   @include variables.theme-light;
 }
 
-[theme='dark'] {
+[data-theme='dark'] {
   @include variables.theme-dark;
 }
 

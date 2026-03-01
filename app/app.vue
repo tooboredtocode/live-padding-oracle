@@ -9,7 +9,7 @@ const theme = useTheme()
 
 useHead({
   bodyAttrs: {
-    "theme": theme.reactive()
+    "data-theme": theme.reactive()
   }
 })
 
@@ -17,7 +17,7 @@ function listener(event: MediaQueryListEvent) {
   theme.set(event.matches)
 }
 
-let queryObj
+let queryObj: MediaQueryList;
 
 onMounted(() => {
   queryObj = window.matchMedia('(prefers-color-scheme: dark)')

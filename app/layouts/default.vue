@@ -12,13 +12,13 @@ const theme = useTheme()
       </NuxtLink>
       <div class="spacer" />
       <div class="theme-toggle">
-        <font-awesome-icon
-            icon="fa-solid fa-sun"
+        <Icon
+            name="i-fa7-solid-sun"
             :class="{ active: theme.get() === 'light' }"
             @click="theme.setLight()"
         />
-        <font-awesome-icon
-            icon="fa-solid fa-moon"
+        <Icon
+            name="i-fa7-solid-moon"
             :class="{ active: theme.get() === 'dark' }"
             @click="theme.setDark()"
         />
@@ -28,7 +28,7 @@ const theme = useTheme()
       <slot />
     </div>
     <div id="footer">
-      <p>Copyright &copy; 2023 <a href="https://github.com/tooboredtocode">tooboredtocode</a></p>
+      <p>Copyright &copy; 2023 - 2026 <a href="https://github.com/tooboredtocode">tooboredtocode</a></p>
     </div>
   </div>
 </template>
@@ -91,9 +91,7 @@ const theme = useTheme()
     margin: 1rem;
     cursor: pointer;
 
-    & > * {
-      height: 2rem;
-      box-sizing: border-box;
+    svg {
       padding: 0.5rem;
       border-radius: 1.5rem;
     }

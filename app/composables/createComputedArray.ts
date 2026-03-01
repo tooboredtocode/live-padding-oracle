@@ -1,4 +1,4 @@
-import {ComputedRef} from "vue";
+import type { ComputedRef } from "vue";
 
 export default function(blockSize: number, fun: (i: number) => number): ComputedRef<Array<number>> {
     return computed(() => {

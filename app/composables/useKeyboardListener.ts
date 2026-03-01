@@ -9,7 +9,7 @@ interface ListenerReturn {
     value: number;
 }
 
-export default function(e: KeyboardEvent): ListenerReturn {
+export default function(e: KeyboardEvent): ListenerReturn | undefined {
     if (e.key === 'ArrowUp') {
         return { ty: Action.Modify, value: 1 };
     } else if (e.key === 'ArrowDown') {

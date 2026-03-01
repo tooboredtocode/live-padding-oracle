@@ -31,10 +31,18 @@ export default defineNuxtConfig({
 
   css: [
     "~/assets/css/main.scss",
-    "@fortawesome/fontawesome-svg-core/styles.css"
   ],
+
+  modules: ['@nuxt/icon'],
+
+  icon: {
+    mode: "svg",
+    clientBundle: {
+      scan: true,
+    },
+  },
 
   devtools: {
     enabled: true
-  }
+  },
 })

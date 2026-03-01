@@ -22,7 +22,7 @@ function displayBlock(index: number) {
   if (hideContent.value) {
     return "??";
   } else {
-    return props.block[index].toString(16).toUpperCase().padStart(2, '0');
+    return props.block[index]?.toString(16).toUpperCase().padStart(2, '0');
   }
 }
 </script>

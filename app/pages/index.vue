@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {Ref} from "vue";
+import type { Ref } from "vue";
 
 let MAX_BLOCK_SIZE = 4; // can be changed to 16 later
 
@@ -10,20 +10,28 @@ let hideClearMsg = ref(true);
 
 let zeroingIV: Ref<Array<number>> = ref(new Array(MAX_BLOCK_SIZE).fill(0));
 function zeroingIVHandler(e: KeyboardEvent, index: number) {
-  let action = useKeyboardListener(e);
+  const action = useKeyboardListener(e);
+  if (!action) {
+    return;
+  }
+  let value = zeroingIV.value[index] ?? 0;
+
   switch (action.ty) {
     case "Modify":
-      zeroingIV.value[index] += action.value;
-      zeroingIV.value[index] += 256;
-      zeroingIV.value[index] %= 256;
+      value += action.value;
+      value += 256;
+      value %= 256;
+      zeroingIV.value[index] = value;
       break;
     case "Replace":
-      zeroingIV.value[index] <<= 4;
-      zeroingIV.value[index] += action.value;
-      zeroingIV.value[index] %= 256;
+      value <<= 4;
+      value += action.value;
+      value %= 256;
+      zeroingIV.value[index] = value;
       break;
     case "Delete":
-      zeroingIV.value[index] >>= 4;
+      value >>= 4;
+      zeroingIV.value[index] = value;
       break;
   }
 }
@@ -38,6 +46,9 @@ let paddingVec = computed(() => {
 });
 function paddingHandler(e: KeyboardEvent) {
   let action = useKeyboardListener(e);
+  if (!action) {
+    return;
+  }
   switch (action.ty) {
     case "Modify":
       padding.value = Math.min(padding.value + action.value, blockSize);
@@ -51,7 +62,7 @@ function paddingHandler(e: KeyboardEvent) {
   }
 }
 
-let evilIV = createComputedArray(blockSize, (i) => zeroingIV.value[i] ^ paddingVec.value[i]);
+let evilIV = createComputedArray(blockSize, (i) => (zeroingIV.value[i] ?? 0) ^ paddingVec.value[i]);
 
 let clearMsg = ref(new Array(MAX_BLOCK_SIZE).fill(0).map(() => Math.floor(Math.random() * 256)));
 let iv = ref(new Array(MAX_BLOCK_SIZE).fill(0).map(() => Math.floor(Math.random() * 256)));
@@ -59,11 +70,11 @@ let cipher_msg = ref(new Array(MAX_BLOCK_SIZE).fill(0).map(() => Math.floor(Math
 
 let useEvilIV = ref(true);
 
-let receivedIV = createComputedArray(blockSize, (i) => iv.value[i] ^ (useEvilIV.value ? evilIV.value[i] : 0));
-let receivedMsg = createComputedArray(blockSize, (i) => clearMsg.value[i] ^ iv.value[i] ^ receivedIV.value[i]);
+let receivedIV = createComputedArray(blockSize, (i) => (iv.value[i] ?? 0) ^ (useEvilIV.value ? evilIV.value[i] ?? 0 : 0));
+let receivedMsg = createComputedArray(blockSize, (i) => (clearMsg.value[i] ?? 0) ^ (iv.value[i] ?? 0) ^ (receivedIV.value[i] ?? 0));
 
 let hasValidPadding = computed(() => {
-  let padding = receivedMsg.value[receivedMsg.value.length - 1];
+  let padding = receivedMsg.value[receivedMsg.value.length - 1] ?? 0;
   if (padding > blockSize || padding === 0) {
     return false;
   }
