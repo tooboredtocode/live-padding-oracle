@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@iconify-json/fa7-solid": "^1.2.4",
-    "sass": "^1.99.0"
+    "sass": "^1.100.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
